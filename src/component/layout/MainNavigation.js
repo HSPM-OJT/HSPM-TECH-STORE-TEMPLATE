@@ -17,18 +17,18 @@ function MainNavigation() {
             </Link>
          </div>
             <div className="col-lg-2 col-4 ps-5">
-            <div class="dropdown">
-            <a class="btn btn-light btn-lg dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div className="dropdown">
+            <a className="btn btn-light btn-lg dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
              All Category
              </a>
 
-            <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Apple</a></li>
-            <li><a class="dropdown-item" href="#">NoteBook</a></li>
-            <li><a class="dropdown-item" href="#">Desktop</a></li>
-            <li><a class="dropdown-item" href="#">Apple</a></li>
-            <li><a class="dropdown-item" href="#">NoteBook</a></li>
-            <li><a class="dropdown-item" href="#">Desktop</a></li>
+            <ul className="dropdown-menu">
+            <li><a className="dropdown-item" href="#">Apple</a></li>
+            <li><a className="dropdown-item" href="#">NoteBook</a></li>
+            <li><a className="dropdown-item" href="#">Desktop</a></li>
+            <li><a className="dropdown-item" href="#">Apple</a></li>
+            <li><a className="dropdown-item" href="#">NoteBook</a></li>
+            <li><a className="dropdown-item" href="#">Desktop</a></li>
           </ul>
          </div>
             
@@ -60,7 +60,7 @@ function MainNavigation() {
                            <span className="text-muted">Welcome!</span>
                            <div> 
                                  <Link to='/login'>Sign in</Link>|  
-                                 <a href="#"> Register</a>
+                                 <Link to="/addnewProduct"> Register</Link>
                            </div>
                         </div>
                      </div>

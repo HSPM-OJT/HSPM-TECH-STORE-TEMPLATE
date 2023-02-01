@@ -5,4 +5,5 @@
 
 .button{
     width: 10rem;
+    text-transform: uppercase;
 }

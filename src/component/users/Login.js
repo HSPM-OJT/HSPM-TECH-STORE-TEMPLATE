@@ -1,8 +1,6 @@
 import classes from "./Login.module.css"
 
 function Login() {
-
-    const forFrame = classes.frame + "bg-light shadow-lg p-3 mb-5 bg-body rounded"
     
     return(
     <div className={classes.frame}>
@@ -22,7 +20,7 @@ function Login() {
         </div>
         <div class="row mb-3"> 
             <div class="col text-center">
-                <button class="btn btn-primary btn-lg">Login</button>
+                <button class={`btn btn-primary btn ${classes.button}`}>Login</button>
             </div>
         </div>
         <div class="row mb-4 text-center">
