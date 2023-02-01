@@ -41,6 +41,7 @@ function ProductList() {
     }
 
     return content
+
 }
 
 export default ProductList;

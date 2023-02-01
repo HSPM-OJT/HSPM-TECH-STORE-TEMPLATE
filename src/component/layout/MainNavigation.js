@@ -6,7 +6,6 @@ function MainNavigation() {
     return(
       <div className={classes.bg}>
       <div className="p-3 mb-5 rounded">
-      
         <header className="section-header mb-3">
          <section className="header-main">
             <div className="container">
