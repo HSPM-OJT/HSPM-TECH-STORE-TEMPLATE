@@ -53,7 +53,7 @@ function MainNavigation() {
                         <span className="badge badge-pill badge-danger notify">0</span>
                      </div>
                      <div className="widget-header icontext">
-                        <Link to="/profile" className="shadow icon icon-sm rounded-circle border"><i className="fa fa-user"></i></Link>
+                        <Link to="/users" className="shadow icon icon-sm rounded-circle border"><i className="fa fa-user"></i></Link>
                         <div className="text">
                            <span className="text-muted">Welcome!</span>
                            <div> 

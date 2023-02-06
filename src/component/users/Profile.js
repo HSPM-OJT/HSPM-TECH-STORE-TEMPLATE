@@ -1,4 +1,4 @@
-function Profile (props){
+function Profile (){
     return (
         <div className="container">
             <div className="main">
@@ -11,6 +11,7 @@ function Profile (props){
                                     <h3>FirstName+LastName</h3>
                                     <a href="#">HOME</a><br/>
                                     <a href="#">Shopping Cart</a><br/>
+                                    <a href="#">UserList</a><br/>
                                     <a href="#">Log Out</a><br/>
                                 </div>
                             </div>
@@ -25,7 +26,7 @@ function Profile (props){
                                         <h3>Full Name</h3>
                                     </div>
                                     <div className="col-md-9 text-secondary">
-                                        <p>{props.fname} {props.lname}</p>
+                                        <p>ptk</p>
                                     </div>
                                 </div>
                                 <br/>
@@ -34,7 +35,7 @@ function Profile (props){
                                         <h3>Email</h3>
                                     </div>
                                     <div className="col-md-9 text-secondary">
-                                        <p>{props.email}</p>
+                                        <p>pan@gmail.com</p>
                                     </div> 
                                 </div>
                                 <br/>
@@ -43,10 +44,9 @@ function Profile (props){
                                         <h3>Phone Number</h3>
                                     </div>
                                     <div className="col-md-9 text-secondary">
-                                        <p>{props.phoneNumber}</p>
+                                        <p>09969610229</p>
                                     </div>
                                     </div>
-                                    <br/>
                             </div>
                         </div>
                     </div>
