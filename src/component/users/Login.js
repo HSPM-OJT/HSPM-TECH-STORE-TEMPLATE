@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import classes from "./Login.module.css"
 import { useDispatch } from "react-redux" 
 import { login } from "../auth/authSlice"
@@ -69,8 +70,8 @@ function Login() {
 
         </div>
         <div class="row mb-4 text-center">
-            <div class="col ">
-                <p>Don't have a account? <a href="/register">signup</a></p>
+            <div class="col ">sssssssssssssssssssssssssssssssssssss
+                <p>Don't have a account? <Link to='user/register'>Register</Link></p>
             </div>
         </div>
     </form>
