@@ -7,8 +7,9 @@ import ProductList from './component/product/ProductList';
 import Scroll from './component/scrolling/Scroll';
 import Login from './component/users/Login';
 import Register from './component/users/Register';
-import Profile from './component/users/Profile';
-
+import Users from './component/users/Users';
+import UserList from './component/users/UserList';
+import UpdateUser from './component/users/UpdateUser';
 
 
 
@@ -24,7 +25,9 @@ function App() {
        <Route path='register' element={<Register />}></Route>
        <Route path='productlist' element={<ProductList />}></Route>
        <Route path='order' element={<Order />}></Route>
-       <Route path='profile' element={<Profile />}></Route>
+       <Route path='users' element={<UserList />}></Route>
+       <Route path='user' element={<Users />}></Route>
+       <Route path='edit/:userId' element={<UpdateUser />}/>
        </Route>
       </Routes>
       <Scroll />
