@@ -2,20 +2,23 @@ import { useSelector,useDispatch } from "react-redux";
 import { useEffect } from "react";
 import Order from "./Order";
 import { selectAllOrders,getOrderStatus, fetchOrders } from "./orderSlice";
-
+import { getToken } from "../auth/authSlice";
 function OrderList() {
 
     const dispatch = useDispatch()
-    console.log('dispatch')
+    const token = useSelector(getToken)
     const orders = useSelector(selectAllOrders)
-    console.log("OrderList"+orders)
     const orderStatus = useSelector(getOrderStatus)
 
     useEffect(() => {
         if(orderStatus === 'idle'){
-            dispatch(fetchOrders())
+            if(token){
+            dispatch(fetchOrders(token))
+            }else{
+                console.log('Invalid Token')
+            }
         }
-    },[orderStatus,dispatch])
+    },[orderStatus,dispatch,token])
 
     let content;
 

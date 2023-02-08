@@ -4,15 +4,23 @@ import axios from "axios";
 const GET_ALL_ORDER = 'http://localhost:8383/api/order/all';
 const POST_NEW_ORDER = 'http://localhost:8383/api/order/create';
 
-export const fetchOrders = createAsyncThunk('orders/fetchOrders', async () => {
-    const response = await axios.get(GET_ALL_ORDER)
-    // console.log("Response object"+response.data)
+export const fetchOrders = createAsyncThunk('orders/fetchOrders', async (token) => {
+    const response = await axios.get(GET_ALL_ORDER,{
+        headers:{
+            'Authorization':token,
+        }
+    });
     return response.data
-})
+});
 
 
 export const addNewOrder = createAsyncThunk('orders/addNewOrder', async (order) => {
-    const response = await axios.post(POST_NEW_ORDER,order)
+    const response = await axios.post(POST_NEW_ORDER,order,{
+        headers:{
+            'Content-Type':'application/json',
+            'Authorization':order.token,
+        }, 
+    })
     return response.data
 })
 

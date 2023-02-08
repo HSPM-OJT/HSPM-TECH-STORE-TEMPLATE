@@ -49,11 +49,11 @@ function MainNavigation() {
             <div className="col-lg-4 col-sm-6 col-12">
                <div className="widgets-wrap float-md-end">
                      <div className="widget-header  me-3">
-                        <a href="#" className="shadow icon icon-sm rounded-circle border"><i className="fa fa-shopping-cart"></i></a>
+                        <Link to='#' className="shadow icon icon-sm rounded-circle border"><i className="fa fa-shopping-cart"></i></Link>
                         <span className="badge badge-pill badge-danger notify">0</span>
                      </div>
                      <div className="widget-header icontext">
-                        <Link to="/users" className="shadow icon icon-sm rounded-circle border"><i className="fa fa-user"></i></Link>
+                        <Link to='/user/profile' className="shadow icon icon-sm rounded-circle border"><i className="fa fa-user"></i></Link>
                         <div className="text">
                            <span className="text-muted">Welcome!</span>
                            <div> 

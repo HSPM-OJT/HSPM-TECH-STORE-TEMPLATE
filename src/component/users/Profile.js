@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Profile (){
     return (
         <div className="container">
@@ -6,13 +8,12 @@ function Profile (){
                     <div className="col-md-4 mt-1">
                         <div className="card text-center sidebar">
                             <div className="card-body">
-                                <img src="img.jpg" className="rounded-circle" width="150px"></img>
+                                <img src="img.jpg" className="rounded-circle" width="150px" alt="default"></img>
                                 <div className="mt-3">
-                                    <h3>FirstName+LastName</h3>
-                                    <a href="#">HOME</a><br/>
-                                    <a href="#">Shopping Cart</a><br/>
-                                    <a href="#">UserList</a><br/>
-                                    <a href="#">Log Out</a><br/>
+                                    <Link to='/product/productlist'>ProductList</Link><br/>
+                                    <Link to='/product/addnewProduct'>AddProduct</Link><br/>
+                                    <Link to='/user/users'>UserList</Link><br/>
+                                    <Link to='/order/all'>OrderList</Link><br/>
                                 </div>
                             </div>
                         </div>
