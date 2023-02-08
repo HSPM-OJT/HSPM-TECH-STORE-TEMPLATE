@@ -70,7 +70,7 @@ function Login() {
 
         </div>
         <div class="row mb-4 text-center">
-            <div class="col ">sssssssssssssssssssssssssssssssssssss
+            <div class="col ">
                 <p>Don't have a account? <Link to='user/register'>Register</Link></p>
             </div>
         </div>

@@ -1,12 +1,12 @@
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { useState } from "react";
 import { addNewOrder} from "./orderSlice";
 import { useNavigate } from "react-router-dom";
-
+import { getToken } from "../auth/authSlice";
 function AddOrderForm(){
 
     const navigate = useNavigate()
-
+    const token = useSelector(getToken)
     const [productName,setProductName] = useState('')
     const [price,setPrice] = useState('')
     const [quantity,setQuantity] = useState('')
@@ -42,7 +42,7 @@ function AddOrderForm(){
 
     const onSubmit = (event) => {
         event.preventDefault()
-
+        console.log(token)
         if(canCreate){
             try{
                 setAddRequestStatus('pending')
@@ -61,7 +61,7 @@ function AddOrderForm(){
                             township,
                             city,
                             country
-                        }
+                        },token
                     }),
                 ).unwrap()
                 navigate('/')
@@ -130,10 +130,6 @@ function AddOrderForm(){
                 <div className="row">
                 <div className="col-md-6 mb-3">
                 <label htmlFor="country">Street</label>
-                    {/* <select class="" id="street" required>
-                        <option value="">Choose...</option>
-                        <option>Mynamar</option>
-                    </select> */}
                     <input className="d-block w-100 form-control" type="text" required 
                     value={street}
                     onChange={onStreetChange}

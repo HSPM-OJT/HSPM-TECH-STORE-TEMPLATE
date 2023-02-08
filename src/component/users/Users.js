@@ -50,7 +50,7 @@ function Users(props){
                     {isModalOpen && <Backdrop onBackdrop={backdropHandler}/>} 
                 </div>
                 <div className="col-1 mb-1">
-                <Link to={`/edit/${props.id}`}>
+                <Link to={`/user/edit/${props.id}`}>
                                 <i className="fa fa-edit pr-1">Update</i>
                 </Link>
                 </div>

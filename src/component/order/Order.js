@@ -1,6 +1,4 @@
-
 function Order(props) {
-    
     return(
         <div className="mb-5">
         <h5 className="text-center">CheckOut form</h5>
@@ -78,7 +76,6 @@ function Order(props) {
                 <div className="col-2 mb-2">
                     GrandTotal
                 </div>
-
                 <div className="col-2 mb-2">
                     {props.grandTotal}
                 </div>
