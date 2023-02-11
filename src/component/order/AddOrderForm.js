@@ -61,9 +61,7 @@ function AddOrderForm(){
                             township,
                             city,
                             country
-                        },token
-                    }),
-                ).unwrap()
+                        },token}),).unwrap()
                 navigate('/')
             }catch(error){
                 console.log(error)

@@ -7,7 +7,7 @@ function Category(){
         <div className="col-md-3">
         <Card>
             <div href="#" className="card card-product-grid">
-                     <Link to='/product/list' className="img-wrap"> <img src="assets/images/items/1.jpg" alt="1" /> </Link>
+                     <Link to='/product/productlist' className="img-wrap"> <img src="assets/images/items/1.jpg" alt="1" /> </Link>
                      <figcaption className="info-wrap">
                        
                      </figcaption>

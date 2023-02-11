@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import classes from "./Login.module.css"
 import { useDispatch } from "react-redux" 
 import { login } from "../auth/authSlice"
 import { useState } from "react"
 
 function Login() {
+    const navigate = useNavigate()
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const [requestStatus,setRequestStatus] = useState('idle')
@@ -26,6 +27,7 @@ function Login() {
                     email,
                     password
                 })).unwrap()
+                navigate('/user/profile')
             } catch (error) {
                 console.error(error)
             }finally{
