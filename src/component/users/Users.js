@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import ConfirmModal from "../utility/ConfirmModal";
-import Backdrop from "../utility/Backdrop";
 import { deleteUser } from "./userSlice";
 import { Link } from "react-router-dom";
+import Backdrop from "../utility/Backdrop";
+import ConfirmModal from "../utility/ConfirmModal";
 function Users(props){
                 
     const [isModalOpen,setModalOpen] = useState(false)

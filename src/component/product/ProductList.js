@@ -30,6 +30,7 @@ function ProductList() {
         content = products.map(
             (product)=>(
                     <Product 
+                        id={product.id}
                         image={product.image}
                         productName={product.productName}
                         price={product.price}

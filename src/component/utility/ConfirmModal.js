@@ -12,8 +12,8 @@ function ConfirmModal(props){
     const buttonClasses = classes.btn+' '+classes['btn--alt']
 
     return (
-        <div className={classes.modal}>
-            <p>Are you sure this Project to delete?</p>
+        <div className={classes.modals}>
+            <p>Are you sure this User to delete?</p>
             <button className={buttonClasses} onClick={onCancel}>Cancel</button>
             <button className={classes.btn} onClick={onConfirm}>Confirm</button>
         </div>

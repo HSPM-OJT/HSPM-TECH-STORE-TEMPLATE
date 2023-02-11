@@ -17,6 +17,7 @@ import PrivateRoute from './component/auth/PrivateRoute'
 import { getToken } from './component/auth/authSlice';
 import AddProductForm from './component/product/AddProductForm';
 import Profile from './component/users/Profile';
+import UpdateProductForm from './component/product/UpdateProductForm';
 
 function App() {
   const token = useSelector(getToken)
@@ -45,12 +46,9 @@ function App() {
           <Route path='product'>
             <Route path='addnewProduct' element={<PrivateRoute token={token}><AddProductForm/></PrivateRoute>}></Route>
             <Route path='productlist' element={<PrivateRoute token={token}><ProductList /></PrivateRoute>}></Route>
+            <Route path='editProduct/:productId' element={<PrivateRoute token={token}><UpdateProductForm /></PrivateRoute>}></Route>
           </Route>
-        
-          
-       
-       </Route>
-
+        </Route>
       </Routes>
       <Scroll />
     </Layout>

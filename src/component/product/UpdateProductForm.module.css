@@ -1,0 +1,9 @@
+.frame{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.button{
+    width: 10rem;
+    text-transform: uppercase;
+}

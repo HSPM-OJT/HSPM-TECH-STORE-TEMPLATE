@@ -1,24 +1,30 @@
 import { useDispatch,useSelector } from 'react-redux';
 import { useState } from 'react';
-import classes from './AddProductForm.module.css';
-import { addNewProduct } from './productSlice';
-import { useNavigate } from 'react-router-dom';
+import classes from './UpdateProductForm.module.css';
+import { editProduct,selectProductById } from './productSlice';
+import { useNavigate,useParams } from 'react-router-dom';
 import { getToken } from '../auth/authSlice';
-function AddProductForm(){
-
+function UpdateProductForm(){
+    const { productId } = useParams()
+    const product = useSelector( (state) => selectProductById(state,Number(productId)))
+    
     const navigate = useNavigate()
     const token = useSelector(getToken)
-    const [productName,setProductName] = useState('')
-    const [productCode,setProductCode] = useState('')
-    const [quantity,setQuantity] = useState('')
-    const [description,setDesciption] = useState('')
-    const [image,setImage] = useState('')
-    const [expireDate,setExpireDate] = useState('')
-    const [price,setPrice] = useState('')
+
+
+    const [id,setId] = useState(product?.id)
+    const [productName,setProductName] = useState(product?.productName)
+    const [productCode,setProductCode] = useState(product?.productCode)
+    const [quantity,setQuantity] = useState(product?.quantity)
+    const [description,setDesciption] = useState(product?.description)
+    const [image,setImage] = useState(product?.image)
+    const [expireDate,setExpireDate] = useState(product?.expireDate)
+    const [price,setPrice] = useState(product?.price)
     
 
     const [addRequestStatus,setAddRequestStatus] =useState('idle')
 
+    const onIdChange = e => setId(e.target.value)
     const onProductCodeChange = e => setProductCode(e.target.value)
     const onQuantityChange = e => setQuantity(e.target.value)
     const onDescriptionChange = e => setDesciption(e.target.value)
@@ -38,7 +44,8 @@ function AddProductForm(){
        try {
         setAddRequestStatus('pending')
         dispatch(
-            addNewProduct({
+            editProduct({
+                id,
                 productName,
                 productCode,
                 price,
@@ -53,7 +60,9 @@ function AddProductForm(){
        } catch (error) {
          console.log(error)
        }finally{
+
         setAddRequestStatus('idle')
+        setId('')
         setImage('')
         setProductName('')
         setPrice('')
@@ -62,13 +71,13 @@ function AddProductForm(){
         setDesciption('')
         setExpireDate('')
             }
+
         }
         
     }
-
     return (
         <div className={`bg-light shadow-sm p-3 mb-5 bg-body rounded ${classes.frame}`}>
-        <h2 className="text-center pb-3">Add/Update  Product form</h2>
+        <h2 className="text-center pb-3">Update  Product form</h2>
          <form onSubmit={onSubmit}>
             <div className="row mb-3">
                 <div className="col-6">
@@ -85,6 +94,7 @@ function AddProductForm(){
                         type="text" 
                         className="form-control form-control-lg" 
                         placeholder="Enter productCode"
+                        disabled
                         value={productCode}
                         onChange={onProductCodeChange}
                         />
@@ -150,15 +160,13 @@ function AddProductForm(){
     
                 </div>
                 <div className="col-6 text-center">
-                    <button type="submit" className={`btn btn-primary float-end ${classes.button}`} disabled={!canSave}>Add product</button>
+                    <button type="submit" className={`btn btn-primary float-end ${classes.button}`} disabled={!canSave}>Update</button>
     
                 </div>
     
             </div>
          </form>
         </div>
-
     )
 }
-
-export default AddProductForm
+export default UpdateProductForm;
